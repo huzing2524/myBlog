@@ -57,4 +57,23 @@
    }
    ```
 4. 然后试一下接口，正常来说应该是这样：
+
+    ![1](https://user-images.githubusercontent.com/39394831/154393210-1defea5c-c974-469c-9a22-17e968349398.png)
+5. 记录一下另外一个问题：
+    - `Fatal Python error: Py_Initialize: Unable to get the local encoding
+ModuleNotFoundError: No module named 'encodings'`
+    - 搬瓦工VPS服务器上uWSGI不能正常启动，阿里云ECS服务器上正常启动：这是因为搬瓦工服务器上没有默认安装 apt install python-dev 这个包的原因，不是uWSGI配置文件虚拟环境路径没有正常生效的原因！参考 [stack overflow: python-dev](https://link.zhihu.com/?target=https%3A//stackoverflow.com/questions/16272542/uwsgi-fails-with-no-module-named-encoding-error)。
+    - 另外一种办法就是删除当前的虚拟环境，然后重新安装虚拟环境和依赖包。
+    
+    ![2](https://user-images.githubusercontent.com/39394831/154393941-0f210e57-2540-4819-8829-10c58b2ebc3e.jpg)
+6. Nginx启动的问题：
+    ```bash
+    root@bwg:/etc/nginx# nginx -t -c ./nginx.conf 
+    nginx: [emerg] open() "/usr/share/nginx/./nginx.conf" failed (2: No such file or directory)
+    nginx: configuration file /usr/share/nginx/./nginx.conf test failed
+    ```
+    这是Nginx服务没有正常启动的原因，service nginx start 之后 nginx -t -c ./nginx.conf 一切正常。
+    
+    ![3](https://user-images.githubusercontent.com/39394831/154394177-72629e9a-56f6-4aba-9b75-da8322714943.jpg)
+
    
