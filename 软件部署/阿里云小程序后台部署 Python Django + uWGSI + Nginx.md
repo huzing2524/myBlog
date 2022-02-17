@@ -1,4 +1,5 @@
-###【软件部署】阿里云小程序后台部署 Python Django + uWGSI + Nginx
+### 【软件部署】阿里云小程序后台部署 Python Django + uWGSI + Nginx
+
 
 1. 使用 uWSGI 运行Python Django 后台, Nginx 转发到 uWSGI。
 2. uWSGI 配置，我使用的 ini 文件。 运行命令: uwsgi --ini uwsgi.ini
