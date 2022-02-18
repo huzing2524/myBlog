@@ -4,10 +4,22 @@
 所以说，一种办法不行，还是另外再想其它方法吧。还有其它的一些处理过程，在这里，[github链接地址](https://link.zhihu.com/?target=https%3A//github.com/huzing2524/circuit_board)
 
 1. 原始样本图片是这样的，需要测量两处红线位置的尺寸。但是分界线的处对比度太低导致边缘检测不到上面：
+
+    ![1](https://user-images.githubusercontent.com/39394831/154596283-a1631a8d-9043-40f2-a778-4bc86f06eb37.jpg)
 2. 直接使用 cv2.Canny() 的效果，黑色和蓝色的分界线因为对比度高可以检测到，蓝色和浅灰色的分界线因为对比度低检测不到：
+    
+    ![2](https://user-images.githubusercontent.com/39394831/154596422-5e83d463-867b-4325-a8d8-09563cbc80c0.png)
+
 3. 使用了 cv2.inRange() 用颜色来区分：
+    
+    ![3](https://user-images.githubusercontent.com/39394831/154596453-04b6fbfe-17a0-4ea0-9549-57bae58a5967.png)
+
 4. 最后的效果（蓝色线段和数字为自动测量结果）：
+
+    ![4](https://user-images.githubusercontent.com/39394831/154596559-f6efbbdd-e85c-4e59-aa93-01276f4618ce.jpg)
+
 5. 最后附上代码：
+
     ```python
     import cv2
     import numpy
