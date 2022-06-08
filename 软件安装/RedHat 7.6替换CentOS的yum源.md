@@ -14,7 +14,7 @@
     
   - 安装上面三个包：`rpm -ivh yum-*`
     
-  - 检查yum是否安装成功：`rpm -qa |grep yum`
+  - 检查yum是否安装成功：`rpm -qa | grep yum`
     
 - 替换并repo文件：
   
