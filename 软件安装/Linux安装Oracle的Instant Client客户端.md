@@ -1,17 +1,20 @@
-官方文档及下载地址：
-https://www.oracle.com/cn/database/technologies/instant-client/linux-x86-64-downloads.html
-https://www.oracle.com/cn/database/technology/linuxx86-64soft.html
+- 官方文档及下载地址：
+  - https://www.oracle.com/cn/database/technologies/instant-client/linux-x86-64-downloads.html
+  - https://www.oracle.com/cn/database/technology/linuxx86-64soft.html
+
 
 - 背景：
   - Python使用cx_Oracle直接连接Oracle数据库时会报错如下：
   - cx_Oracle.DatabaseError: DPI-1047: Cannot locate a 64-bit Oracle Client library: "libclntsh.so: cannot open shared object file: No such file or directory".
   - cx_Oracle.DatabaseError: DPI-1047: Cannot locate a 64-bit Oracle Client library: "libnnz19.so: cannot open shared object file: No such file or directory".
 
+
 - 安装环境：
   - 操作系统：Red Hat Enterprise Linux Server release 7.6 (Maipo)
   - 数据库：Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production Version 19.6.0.0.0
   - Python 3.7.7
-  - Instant Client客户端与服务端版本兼容关系
+  - [Instant Client客户端与服务端版本兼容关系](/docs/Oracle%20客户端与服务端的兼容关系.png)
+
 
 - 安装过程：
   - `sudo mkdir /opt/oracle`
@@ -26,6 +29,7 @@ https://www.oracle.com/cn/database/technology/linuxx86-64soft.html
     - export PATH=/opt/oracle/instantclient_19_15:$PATH
     - 保存退出文件，执行命令：`source ~/.bash_profile`
 
+
 - 测试连接Oracle数据库：
   ```python
   # -*- coding: utf-8 -*-
@@ -38,7 +42,7 @@ https://www.oracle.com/cn/database/technology/linuxx86-64soft.html
   # 方法一
   connection = cx_Oracle.connect(user='数据库用户名', password='数据库密码', dsn='ip地址:端口号/数据库名称', encoding='UTF-8')
   # 方法二
-  connection = cx_Oracle.connect('数据库用户名/数据库密码@ip地址:端口号/数据库名称')
+  # connection = cx_Oracle.connect('数据库用户名/数据库密码@ip地址:端口号/数据库名称')
   # cursor = connection.cursor()
   # cursor.execute('')
 
