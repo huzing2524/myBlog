@@ -24,7 +24,7 @@ https://www.oracle.com/cn/database/technology/linuxx86-64soft.html
   - vim ~/.bash_profile，编辑输入以下内容：
     - export LD_LIBRARY_PATH=/opt/oracle/instantclient_19_15:$LD_LIBRARY_PATH
     - export PATH=/opt/oracle/instantclient_19_15:$PATH
-    - source ~/.bash_profile
+    - 保存退出文件，执行命令：`source ~/.bash_profile`
 
 - 测试连接Oracle数据库：
   ```python
