@@ -18,7 +18,7 @@
     
 - 替换并repo文件：
   
-  - 备份旧repo文件：`mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup`
+  - 备份旧repo文件：`mv /etc/yum.repos.d/redhat.repo /etc/yum.repos.d/redhat.repo.backup`
     
   - 下载新的repo文件：`wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo`
     
