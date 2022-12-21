@@ -24,7 +24,7 @@
     
   - 编辑repo文件：
     
-    - `vi CentOS-Base.repo`
+    - `vi /etc/yum.repos.d/CentOS-Base.repo`
       
     - 将所有的$releasever全部替换成版本号7：
       
